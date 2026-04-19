@@ -9,7 +9,7 @@ public class NPC : MonoBehaviour, IInteractable
     public NPCDialogue dialogueData;
     public GameObject dialoguePanel;
     public TMP_Text dialogueText, nameText;
-    public Image portraitImage;
+    //public Image portraitImage;
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
@@ -45,7 +45,7 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = true;
         dialogueIndex = 0;
         nameText.SetText(dialogueData.npcName); 
-        portraitImage.sprite = dialogueData.npcPortarait;
+        //portraitImage.sprite = dialogueData.npcPortarait;
 
         dialoguePanel.SetActive(true);
         Cursor.lockState = CursorLockMode.None;

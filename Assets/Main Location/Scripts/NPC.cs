@@ -48,6 +48,8 @@ public class NPC : MonoBehaviour, IInteractable
         portraitImage.sprite = dialogueData.npcPortarait;
 
         dialoguePanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         //PauseController.SetPause(true);
 
         StartCoroutine(TypeLine());
@@ -62,7 +64,7 @@ public class NPC : MonoBehaviour, IInteractable
             dialogueText.SetText(dialogueData.dialogueLine[dialogueIndex]);
             isTyping = false;
         }
-        else if(++dialogueIndex +1 < dialogueData.dialogueLine.Length) 
+        else if(++dialogueIndex < dialogueData.dialogueLine.Length) 
         {
             StartCoroutine(TypeLine());
         }

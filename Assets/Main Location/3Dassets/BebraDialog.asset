@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 822910e401f4a36449ff4781bd499141, type: 3}
-  m_Name: TestDialogue
+  m_Name: BebraDialog
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Bebra
   npcPortarait: {fileID: 21300000, guid: 5108780c940c8454dac0662a0a1f0229, type: 3}
   dialogueLine:
   - 'Hi there! '
-  - 'I HAVE BUGS UNDER MY SKIN! '
+  - I AM A RETARD!!!!!!
   autoProgressLine: 0100
   autoProgressDelay: 1.5
   typingSpeed: 0.05

@@ -493,7 +493,8 @@ Transform:
   m_LocalPosition: {x: 908.2152, y: 528.63684, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 847443136}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &162143718
@@ -2717,6 +2718,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &847443135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 847443136}
+  - component: {fileID: 847443137}
+  m_Layer: 0
+  m_Name: ItemDictionary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &847443136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847443135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 132666878}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &847443137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847443135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a113273839a1c134da5e5d9dbc4b336f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDictionary
+  itemPrefab:
+  - {fileID: -8533223958422990803, guid: f9ba95b0700898247880cf030ddf1864, type: 3}
+  - {fileID: 8550463746251370411, guid: 0c029b1e1f66a4447b13c4cf761293e9, type: 3}
 --- !u!1 &889342456
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,7 +3203,9 @@ MonoBehaviour:
   inventoryPanel: {fileID: 1298170740}
   slotsPrefab: {fileID: 6171938879804151440, guid: a2cb5a5e9de15874182576ed3ca7f5dc, type: 3}
   slotCount: 6
-  itemPrefab: []
+  itemPrefab:
+  - {fileID: 4522604452532413319, guid: f9ba95b0700898247880cf030ddf1864, type: 3}
+  - {fileID: 4753896532015062017, guid: 0c029b1e1f66a4447b13c4cf761293e9, type: 3}
 --- !u!4 &975514748
 Transform:
   m_ObjectHideFlags: 0

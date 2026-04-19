@@ -1,7 +1,8 @@
-using UnityEngine;
-using System.Collections;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using static Quest;
 
 [CreateAssetMenu(menuName = "Quests/Quest")]
 public class Quest : ScriptableObject
@@ -32,37 +33,39 @@ public class Quest : ScriptableObject
     }
 
     public enum ObjectiveType { CollectItem, TalkNPC, Custom }
-
+}
 
     [System.Serializable]
 
-    public class QuestProgress
+public class QuestProgress
+{
+    public Quest quest;
+    public List<QuestObjective> objectives;
+
+    public QuestProgress(Quest quest)
     {
-        public Quest quest;
-        public List<QuestObjective> objectives;
+        this.quest = quest;
+        objectives = new List<QuestObjective>();
 
-        public QuestProgress (Quest quest)
+        //Deep copy to avoid modifying original
+
+        foreach (var obj in quest.objectives)
         {
-            this.quest = quest;
-            objectives = new List<QuestObjective>();
-
-            //Deep copy to avoid modifying original
-
-            foreach (var obj in quest.objectives)
+            objectives.Add(new QuestObjective
             {
-                objectives.Add(new QuestObjective
-                {
-                    objectiveID = obj.objectiveID,
-                    description = obj.description,
-                    type = obj.type,
-                    requiredAmount = obj.requiredAmount,
-                    currentAmount = 0
-                });
-            }
+                objectiveID = obj.objectiveID,
+                description = obj.description,
+                type = obj.type,
+                requiredAmount = obj.requiredAmount,
+                currentAmount = 0
+            });
         }
-
-        public bool IsCompleted => objectives.TrueForAll (o => o.IsCompeted);
-        public string QuestID => quest.questID;
     }
 
+    public bool IsCompleted => objectives.TrueForAll(o => o.IsCompeted);
+    public string QuestID => quest.questID;
 }
+
+
+
+    

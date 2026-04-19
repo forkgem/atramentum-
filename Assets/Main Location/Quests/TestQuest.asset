@@ -17,7 +17,12 @@ MonoBehaviour:
   description: hui
   objectives:
   - objectiveID: 1
-    description: huiZIPhuiZip
+    description: Talk to Glorp
+    type: 1
+    requiredAmount: 1
+    currentAmount: 0
+  - objectiveID: 1
+    description: Cllect 5 clues
     type: 1
     requiredAmount: 1
     currentAmount: 0

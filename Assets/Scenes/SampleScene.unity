@@ -180,9 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: e12a3103e20efe44eb2c56b98e2d4ef8, type: 2}
-  dialoguePanel: {fileID: 1343529553}
-  dialogueText: {fileID: 829227357}
-  nameText: {fileID: 1717371402}
 --- !u!1 &25862349
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +475,53 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2071.1711, y: -60.632942, z: -1525.9087}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &118003489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 118003491}
+  - component: {fileID: 118003490}
+  m_Layer: 0
+  m_Name: 'DialogueController '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &118003490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118003489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b0c0c5879fc8bf4c856eb0daa3958f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  dialoguePanel: {fileID: 1343529553}
+  dialogueText: {fileID: 829227357}
+  nameText: {fileID: 1717371402}
+--- !u!4 &118003491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118003489}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.162, y: 0, z: 49.04505}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -966,8 +1010,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1462428316}
   - {fileID: 778236421}
+  - {fileID: 1462428316}
   m_Father: {fileID: 1343529554}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2574,9 +2618,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: 8f8d3f5583d91eb4bbd72f1f13167991, type: 2}
-  dialoguePanel: {fileID: 1343529553}
-  dialogueText: {fileID: 829227357}
-  nameText: {fileID: 1717371402}
 --- !u!65 &691760511
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6301,3 +6342,4 @@ SceneRoots:
   - {fileID: 1687123480}
   - {fileID: 691760512}
   - {fileID: 234734943}
+  - {fileID: 118003491}

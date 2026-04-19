@@ -13,12 +13,19 @@ MonoBehaviour:
   m_Name: TestDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Radish
-  npcPortarait: {fileID: 21300000, guid: 5108780c940c8454dac0662a0a1f0229, type: 3}
   dialogueLine:
   - 'Hi there! '
-  - 'I HAVE BUGS UNDER MY SKIN! '
-  autoProgressLine: 0100
+  - I HAVE BUGS UNDER MY SKIN?
+  - BUGS!
+  - SKIN!
+  autoProgressLine: 01000000
   autoProgressDelay: 1.5
   typingSpeed: 0.005
   voiceSound: {fileID: 8300000, guid: a02e8034c96cfe0498fed4c0a21aa423, type: 3}
   voicePitch: 3
+  choices:
+  - dialogueIndex: 1
+    choices:
+    - 'YES '
+    - YES!!!!!!!!!!
+    nextDialogueIndexes: 0200000003000000

@@ -7,12 +7,14 @@ using UnityEngine.UI;
 public class NPC : MonoBehaviour, IInteractable
 {
     public NPCDialogue dialogueData;
-    public GameObject dialoguePanel;
-    public TMP_Text dialogueText, nameText;
-    //public Image portraitImage;
-
+    private DialogueController dialogueUI; 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
+
+    private void Start()
+    {
+        dialogueUI = DialogueController.Instance;
+    }
 
     public bool CanInteract()
     {
@@ -44,10 +46,9 @@ public class NPC : MonoBehaviour, IInteractable
     {
         isDialogueActive = true;
         dialogueIndex = 0;
-        nameText.SetText(dialogueData.npcName); 
-        //portraitImage.sprite = dialogueData.npcPortarait;
+        //dialogueUI.SetNPCInfo(dialogueData.npcName, dialogueData.npcPortrait);
 
-        dialoguePanel.SetActive(true);
+        dialogueUI.ShowDialogueUI(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         //PauseController.SetPause(true);
@@ -61,7 +62,7 @@ public class NPC : MonoBehaviour, IInteractable
         if (isTyping)
         {
             StopAllCoroutines();
-            dialogueText.SetText(dialogueData.dialogueLine[dialogueIndex]);
+            dialogueUI.SetDialogueText(dialogueData.dialogueLine[dialogueIndex]);
             isTyping = false;
         }
         else if(++dialogueIndex < dialogueData.dialogueLine.Length) 
@@ -77,11 +78,11 @@ public class NPC : MonoBehaviour, IInteractable
     IEnumerator TypeLine()
     {
         isTyping = true;
-        dialogueText.SetText("");
+        dialogueUI.SetDialogueText("");
 
         foreach(char letter in dialogueData.dialogueLine[dialogueIndex])
         {
-            dialogueText.text += letter;
+            dialogueUI.SetDialogueText(dialogueUI.dialogueText.text += letter);
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
 
@@ -98,8 +99,8 @@ public class NPC : MonoBehaviour, IInteractable
     {
         StopAllCoroutines();
         isDialogueActive = false;
-        dialogueText.SetText("");
-        dialoguePanel.SetActive(false);
+        dialogueUI.SetDialogueText("");
+        dialogueUI.ShowDialogueUI(false);
         //PauseController.SetPause(false);
     }
 }

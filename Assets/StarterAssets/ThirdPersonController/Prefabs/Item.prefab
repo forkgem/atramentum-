@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b90ed253f86c04e84fff43592203c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
+  ID: 0
 --- !u!225 &9067876516087003832
 CanvasGroup:
   m_ObjectHideFlags: 0

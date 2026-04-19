@@ -16,16 +16,16 @@ public class InventoryCpntroller : MonoBehaviour
     {
         itemDictionary = FindAnyObjectByType<ItemDictionary>();
 
-        for (int i = 0; i < slotCount; i++)
-        {
-            Slot slot = Instantiate(slotsPrefab, inventoryPanel.transform).GetComponent<Slot>();
-            if (i < itemPrefab.Length)
-            {
-                GameObject item = Instantiate(itemPrefab[i], slot.transform);
-                item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-                slot.currentItem = item;
-            }
-        }
+        //for (int i = 0; i < slotCount; i++)
+        //{
+        //    Slot slot = Instantiate(slotsPrefab, inventoryPanel.transform).GetComponent<Slot>();
+        //    if (i < itemPrefab.Length)
+        //    {
+        //        GameObject item = Instantiate(itemPrefab[i], slot.transform);
+        //        item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        //        slot.currentItem = item;
+        //    }
+        //}
 
     }
 

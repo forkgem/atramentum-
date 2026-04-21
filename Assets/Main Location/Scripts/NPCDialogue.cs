@@ -9,6 +9,7 @@ public class NPCDialogue : ScriptableObject
     //public Sprite npcPortrait;
     public string[] dialogueLine;
     public bool[] autoProgressLine;
+    public bool[] endDialogueLines;
     public float autoProgressDelay = 1.5f;
     public float typingSpeed = 0.05f;
     public AudioClip voiceSound;

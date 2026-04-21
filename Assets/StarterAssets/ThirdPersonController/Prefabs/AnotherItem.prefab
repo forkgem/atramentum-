@@ -8,9 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8533223958422990803, guid: f9ba95b0700898247880cf030ddf1864, type: 3}
+      propertyPath: ID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3751543125052594486, guid: f9ba95b0700898247880cf030ddf1864, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6fda92ecaa14ea94eb5d6fba0a22def2, type: 3}
     - target: {fileID: 4522604452532413319, guid: f9ba95b0700898247880cf030ddf1864, type: 3}
       propertyPath: m_Name
-      value: Item
+      value: AnotherItem
       objectReference: {fileID: 0}
     - target: {fileID: 6802366585002778448, guid: f9ba95b0700898247880cf030ddf1864, type: 3}
       propertyPath: m_Pivot.x
@@ -92,6 +100,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7356849331585183153, guid: f9ba95b0700898247880cf030ddf1864, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6fda92ecaa14ea94eb5d6fba0a22def2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

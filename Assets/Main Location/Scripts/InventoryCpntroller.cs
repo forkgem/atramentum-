@@ -29,6 +29,22 @@ public class InventoryCpntroller : MonoBehaviour
         }
 
     }
+
+    public bool AddItem(GameObject itemPrefab)
+    {
+        foreach (Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if (slot != null && slot.currentItem == null)
+            {
+                GameObject newItem = Instantiate(itemPrefab, slotTransform);
+                newItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                slot.currentItem = newItem;
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 //    public List<InventorySaveData> GetInventoryItems()
@@ -50,7 +66,7 @@ public class InventoryCpntroller : MonoBehaviour
 //    public void SetInventoryItems(List<InventorySaveData> inventorySaveDatas)
 //    {
 //        //clear all inventory to prevent duplicates
-//        foreach(Transform child in inventoryPanel.transform)
+//        foreach (Transform child in inventoryPanel.transform)
 //        {
 //            Destroy(child.gameObject);
 //        }
@@ -63,13 +79,13 @@ public class InventoryCpntroller : MonoBehaviour
 
 //        //populate slots with saved items
 
-//        foreach(InventorySaveData data in inventorySaveDatas)
+//        foreach (InventorySaveData data in inventorySaveDatas)
 //        {
-//            if(data.slotIndex < slotCount)
+//            if (data.slotIndex < slotCount)
 //            {
 //                Slot slot = inventoryPanel.transform.GetChild(data.slotIndex).GetComponent<Slot>();
-//                GameObject itemPrefab = itemDictionary.GetItemPrefab(data.itemID); 
-//                if(itemPrefab != null)
+//                GameObject itemPrefab = itemDictionary.GetItemPrefab(data.itemID);
+//                if (itemPrefab != null)
 //                {
 //                    GameObject item = Instantiate(itemPrefab, slot.transform);
 //                    //item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;

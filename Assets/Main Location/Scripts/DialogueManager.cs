@@ -18,6 +18,8 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         story = new Story(inkFile.text);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame

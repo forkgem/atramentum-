@@ -62,7 +62,7 @@ public class NPC : MonoBehaviour, IInteractable
         if (isTyping)
         {
             StopAllCoroutines();
-            dialogueUI.SetDialogueText(dialogueData.dialogueLine[dialogueIndex]);
+            dialogueUI.SetDialogueText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
         }
 
@@ -84,7 +84,7 @@ public class NPC : MonoBehaviour, IInteractable
             }
         }
 
-        if(++dialogueIndex < dialogueData.dialogueLine.Length) 
+        if(++dialogueIndex < dialogueData.dialogueLines.Length) 
         {
             DisplayCurrentLine();
         }
@@ -99,7 +99,7 @@ public class NPC : MonoBehaviour, IInteractable
         isTyping = true;
         dialogueUI.SetDialogueText("");
 
-        foreach(char letter in dialogueData.dialogueLine[dialogueIndex])
+        foreach(char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueUI.SetDialogueText(dialogueUI.dialogueText.text += letter);
             yield return new WaitForSeconds(dialogueData.typingSpeed);
@@ -107,7 +107,7 @@ public class NPC : MonoBehaviour, IInteractable
 
         isTyping = false;
 
-        if (dialogueData.autoProgressLine.Length > dialogueIndex && dialogueData.autoProgressLine[dialogueIndex])
+        if (dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
         {
             yield return new WaitForSeconds(dialogueData.autoProgressDelay);
             NextLine();
@@ -116,17 +116,18 @@ public class NPC : MonoBehaviour, IInteractable
 
     void DisplayChoices(DialogueChoice choice)
     {
-        for(int i = 0; i< choice.choices.Length; i++)
+        for(int i = 0; i < choice.choices.Length; i++)
         {
             int nextIndex = choice.nextDialogueIndexes[i];
-            dialogueUI.CreateChoiceButton(choice.choices[i], () => ChoiceOption(nextIndex));
+            dialogueUI.CreateChoiceButton(choice.choices[i], () => ChooseOption(nextIndex));
         }
     }
 
-    void ChoiceOption(int nextIndex)
+    void ChooseOption(int nextIndex)
     {
         dialogueIndex = nextIndex;
         dialogueUI.ClearChoices();
+        DisplayCurrentLine();
     }
 
     void DisplayCurrentLine()
